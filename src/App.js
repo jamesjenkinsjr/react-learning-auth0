@@ -11,8 +11,24 @@ class App extends Component {
   constructor() {
     super();
     this.auth = new Auth();
+    this.state = {
+      profile: {}
+    }
   }
-  
+  componentWillMount(){
+    const { getProfile, userProfile } = this.auth;
+    if (!userProfile) {
+      getProfile((err, profile) => {
+        this.setState({
+          profile: profile
+        })
+      })
+    } else {
+      this.setState({
+        profile: userProfile
+      });
+    }
+  }
   handleAuthentication = (nextState, replace) => {
     if (/access_token|id_token|error/.test(nextState.location.hash)) {
       this.auth.handleAuthentication();
