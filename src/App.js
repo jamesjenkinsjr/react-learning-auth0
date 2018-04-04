@@ -10,15 +10,14 @@ class App extends Component {
     super();
     this.auth = new Auth();
   }
-  componentDidMount() {
-    this.auth.login();
-  }
+  
   render() {
     return (
       <div >
         <ul>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/profile/123">Profile</Link></li>
+          <li><button onClick={() => this.auth.login()}>Login</button></li>
         </ul>
         <Route path='/' exact component={Home} />
         <Route path='/profile/:id' exact component={Profile} />
