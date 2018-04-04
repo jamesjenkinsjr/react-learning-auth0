@@ -3,7 +3,8 @@ import React from 'react';
 const Profile = props => (
 
     <div>
-        <h1>This is your profile</h1>
+        <h1>Welcome {props.profile.nickname}!</h1>
+        <img src={props.profile.picture} alt="profile_pic"/>
     </div>
 );
 

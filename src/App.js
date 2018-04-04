@@ -49,7 +49,7 @@ class App extends Component {
           this.handleAuthentication(props);
           return <Callback {...props} />
         }} />
-        <PrivateRoute path='/profile/' exact component={Profile} auth={this.auth}/>
+        <PrivateRoute path='/profile/' exact component={Profile} auth={this.auth} {...this.state}/>
       </div>
     );
   }
