@@ -24,6 +24,8 @@ class App extends Component {
           <li><Link to="/">Home</Link></li>
           <li><Link to="/profile/123">Profile</Link></li>
           <li><button onClick={() => this.auth.login()}>Login</button></li>
+          <li><button onClick={() => this.auth.logout()}>Logout</button></li>
+
         </ul>
         <Route path='/' exact component={Home} />
         <Route path='/profile/:id' exact component={Profile} />
